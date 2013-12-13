@@ -19,34 +19,13 @@
 <body>
 	<header>
 		<figure class="logo">
-			<img src="http://localhost:8000/img/santuario.png" alt="">
+			<img src="http://localhost:8000/static/img/santuario.png" alt="">
 		</figure>
 		<h1>Misas</h1>
 		<h3>Horarios de misas del Paraguay</h3>
 	</header>
 	{% block formulario %}
-	<section class="busqueda row">
 
-
-		<form class="form-search" action="busqueda.php" method="get">
-			<div class="col-xs-4">
-				<select class="form-control">
-					<option>Ciudad</option>
-					<option>Iglesia</option>
-					<option>Hora</option>
-				</select>
-			</div>
-			<div class="col-xs-7">
-				<div class="input-group">
-					<input type="text" class="form-control"> <span
-						class="input-group-btn">
-						<button class="btn btn-default" type="submit" value="Submit">Ir
-							a misa!</button>
-					</span>
-				</div>
-			</div>
-		</form>
-	</section>
 	{% endblock %}
 
 	<section class=" resultados">
