@@ -133,7 +133,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     #'debug_toolbar',
-    'ajax_search',
+   'selectable',
     'principal',
     'south',
 )
@@ -186,7 +186,3 @@ DEBUG_TOOLBAR_PANELS = (
 DEBUG_TOOLBAR_CONFIG = { 'INTERCEPT_REDIRECTS': False, }
 
 
-#######DJANGO AJAX SEARCH
-AJAX_SEARCH_LIMIT = 8
-AJAX_SEARCH_HELPER = 'principal.views.search_helper'
-SEARCH_RESULT_TEMPLATE = 'search_results.html'

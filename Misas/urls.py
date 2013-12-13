@@ -14,5 +14,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
      url(r'^admin/', include(admin.site.urls)),
-     url(r'^ajax_search/',include('ajax_search.urls')),
+    (r'^selectable/', include('selectable.urls')),
+    url(r'^search/','principal.views.search'),
 )

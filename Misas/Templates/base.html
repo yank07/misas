@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Misas Paraguay</title>
+
+<link rel="stylesheet"
+	href="http://localhost:8000/static/css/bootstrap.css">
+<link rel="stylesheet" href="http://localhost:8000/static/css/style.css">
+<link type="text/css"	href="http://localhost:8000/static/css/dj.selectable.css"	rel="stylesheet" />
+{% load selectable_tags %} 
+{% include_jquery_libs %}
+ {% include_ui_theme %}
+<script src="http://localhost:8000/static/js/bootstrap.js"></script>
+<script type="text/javascript"
+	src="http://localhost:8000/static/js/jquery.dj.selectable.js"></script>
+
+</head>
+<body>
+	<header>
+		<figure class="logo">
+			<img src="http://localhost:8000/img/santuario.png" alt="">
+		</figure>
+		<h1>Misas</h1>
+		<h3>Horarios de misas del Paraguay</h3>
+	</header>
+	{% block formulario %}
+	<section class="busqueda row">
+
+
+		<form class="form-search" action="busqueda.php" method="get">
+			<div class="col-xs-4">
+				<select class="form-control">
+					<option>Ciudad</option>
+					<option>Iglesia</option>
+					<option>Hora</option>
+				</select>
+			</div>
+			<div class="col-xs-7">
+				<div class="input-group">
+					<input type="text" class="form-control"> <span
+						class="input-group-btn">
+						<button class="btn btn-default" type="submit" value="Submit">Ir
+							a misa!</button>
+					</span>
+				</div>
+			</div>
+		</form>
+	</section>
+	{% endblock %}
+
+	<section class=" resultados">
+		<div class="panel-group" id="accordion">
+			{% block contenido %} 
+			{% endblock %}
+		</div>
+
+	
+		
+
+	</section>
+
+	<footer class="col-xs-12">
+		<p>
+			Desarrollado por <a href="http://www.girolabs.com">Girolabs</a>
+		</p>
+	</footer>
+
+</body>
+</html>

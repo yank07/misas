@@ -1,0 +1,33 @@
+
+   {% block contenido %}  
+ 
+	   {% for elemento in entry_list %}
+	   <div class="panel-group" id="accordion">
+	        <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          <strong>Santuario Joven</strong>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p><strong>Parroco:</strong> {{elemento.name}} .</p>
+        	<p><strong>Horarios: </strong> 8:00, 9:00,11:00,17:00,19:00 .</p>
+        	<p><strong>Direccion: </strong> Sgto Guachiturro casi la casa de Gi.</p>
+        	<p><strong>Telefono: </strong> 021 556 898--{{elemento.peso}}</p>
+        	 <p><a href="#">Galeria de Fotos</a></p>
+        	<p><strong>Como llegar:</strong></p>
+        	 <figure class="mapa">
+        	<img src="http://localhost:8000/static/img/mapa.jpg" alt="">
+        </figure>
+
+      </div>
+    </div>  
+  </div>
+	         
+</div>		      
+        {% endfor %}
+        
+    {% endblock %}
