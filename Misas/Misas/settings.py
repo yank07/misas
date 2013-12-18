@@ -136,6 +136,7 @@ INSTALLED_APPS = (
    'selectable',
     'principal',
     'south',
+    'crispy_forms',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
@@ -184,5 +185,5 @@ DEBUG_TOOLBAR_PANELS = (
 )
 
 DEBUG_TOOLBAR_CONFIG = { 'INTERCEPT_REDIRECTS': False, }
-
+CRISPY_TEMPLATE_PACK= 'bootstrap3'
 

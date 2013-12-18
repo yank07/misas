@@ -13,12 +13,17 @@
     </div>
     <div id="collapse{{elemento.id}}" class="panel-collapse collapse">
       <div class="panel-body">
-        <p><strong>Parroco:</strong> {{elemento.nombre}} .</p>
-        	<p><strong>Horarios: </strong> 8:00, 9:00,11:00,17:00,19:00 .</p>
-        	<p><strong>Direccion: </strong> Sgto Guachiturro casi la casa de Gi.</p>
-        	<p><strong>Telefono: </strong> 021 556 898--{{elemento.peso}}</p>
+        <p><strong>Parroco:</strong> {{elemento.parrocos}} .</p>
+        	<p><strong>Horarios: </strong> 
+        	{% for horario in elemento.horarios_misa.all %}
+ 					 {{ horario }},  						
+			{% endfor %}.
+        	
+        	 </p>
+        	<p><strong>Direccion: </strong> {{elemento.direccion}}</p>
+        	<p><strong>Telefono: </strong> 021 556 898--{{elemento.telefono}}</p>
         	 <p><a href="#">Galeria de Fotos</a></p>
-        	<p><strong>Como llegar:</strong></p>
+        	<p><strong>Como llegar:</strong>{{elemento.coord_long}} -- {{elemento.coord_lat}}</p>
         	 <figure class="mapa">
         	<img src="http://localhost:8000/static/img/mapa.jpg" alt="">
         </figure>

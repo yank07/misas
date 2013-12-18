@@ -1,7 +1,18 @@
 from django.db import models
 
 # Create your models here.
+
+class Pais(models.Model):    
+    nombre = models.CharField(max_length=50)
+    
+    def __unicode__(self):
+        return unicode(self.nombre)
 class Ciudad(models.Model):    
+    nombre = models.CharField(max_length=50)
+    
+    def __unicode__(self):
+        return unicode(self.nombre)
+class Barrio(models.Model):    
     nombre = models.CharField(max_length=50)
     
     def __unicode__(self):
@@ -21,9 +32,12 @@ class Iglesia(models.Model):
     
     nombre = models.CharField(max_length=50)
     parrocos = models.CharField(max_length=100)
-    ciudad = models.ForeignKey(Ciudad, related_name='iglesias')
+    pais =  models.ForeignKey(Pais, related_name='iglesias', default='')
+    ciudad = models.ForeignKey(Ciudad, related_name='iglesias', default='')
+    barrio = models.ForeignKey(Barrio, related_name='iglesias', default='')
     direccion = models.CharField(max_length=140)
     ubicacion = models.URLField()
+    telefono = models.CharField(max_length=30)
     horarios_misa = models.ManyToManyField(HorarioMisa)
     horarios_confesion = models.ManyToManyField(HorarioConfesion)
     coord_long = models.FloatField()

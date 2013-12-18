@@ -14,6 +14,15 @@
 <script src="http://localhost:8000/static/js/bootstrap.js"></script>
 <script type="text/javascript"
 	src="http://localhost:8000/static/js/jquery.dj.selectable.js"></script>
+	<script type="text/javascript">
+    $(document).ready(function() {
+        function newParameters(query) {
+            query.ciudad = $('#id_ciudad').val();
+            console.log(query.ciudad);
+        }
+        $('#id_iglesia_0').djselectable('option', 'prepareQuery', newParameters);
+    });
+</script>
 
 </head>
 <body>
